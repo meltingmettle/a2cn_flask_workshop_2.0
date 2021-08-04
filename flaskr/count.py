@@ -23,7 +23,7 @@ def index():
         return render_template('count/count.html')
 
 def count_ticket():
-    response = requests.get('https://z3n-hack-in-place.zendesk.com/api/v2/tickets/count.json', auth=("eling@zendesk.com","REPLACE"))
+    response = requests.get('https://z3n-hack-in-place-flask-workshop.zendesk.com/api/v2/tickets/count.json', auth=("eling@zendesk.com", $PASSWORD))
 
     response_data = response.json()
 

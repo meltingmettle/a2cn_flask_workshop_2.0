@@ -1,7 +1,7 @@
 import datetime # Allows datetime.now() for creation timestamps
 import json # Allows some helpful json formatting
 import re # Regex for string parsing capability
-import requests # Allows your program to make web requests
+import requests # Allows your program to make web requests.  Install this with `pip install requests`
 
 from flaskr.db import *
 
@@ -17,7 +17,7 @@ def zendesk_api_post(company, new_ticket):
     headers = {'Content-Type': 'application/json',}
 
 
-    response = requests.post('https://z3n-hack-in-place.zendesk.com/api/v2/tickets.json', headers=headers, data=new_ticket, auth=("eling@zendesk.com", "REPLACE"))
+    response = requests.post('https://z3n-hack-in-place-flask-workshop.zendesk.com/api/v2/tickets.json', headers=headers, data=new_ticket, auth=("eling@zendesk.com", $PASSWORD))
     if response.status_code == 200 or response.status_code == 201:
         print("Zendesk ticket submitted!")
     else:
